@@ -42,7 +42,7 @@ class Boat {
   update(){
     if(this.boat){
       this.boat.rotation.y += this.speed.rot;
-      this.boat.position.z += this.speed.vel;
+      this.boat.translateX(this.speed.vel)
     }
   }
 }
@@ -186,10 +186,10 @@ async function init() {
 
   window.addEventListener('keydown',function(e){
     if(e.key == 'ArrowUp'){
-      boat.speed.vel = -0.4;
+      boat.speed.vel = 0.4;
     }
     if(e.key == 'ArrowDown'){
-      boat.speed.vel = 0.4;
+      boat.speed.vel = -0.4;
     }
     if(e.key == 'ArrowRight'){
       boat.speed.rot = -0.1;
